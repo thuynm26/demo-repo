@@ -1,0 +1,18 @@
+on:
+  pull_request:
+    types: [opened, edited, closed, reopened]
+  issue_comment:
+    types: [created, edited, deleted]
+  pull_request_review:
+    types: [submitted, edited, dismissed]
+  pull_request_review_comment:
+    types: [created, edited, deleted]
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: test-hook-neurade/hook-backend@v5
+        env:
+          BACKEND_URL: ${{ secrets.BACKEND_URL }}
+          SECRET_TOKEN: ${{ secrets.SECRET_TOKEN }}
