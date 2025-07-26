@@ -1,3 +1,3 @@
-function checkPrime(num) {
+function checkPrime() {
     return true;
 }
