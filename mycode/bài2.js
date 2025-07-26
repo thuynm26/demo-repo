@@ -1,0 +1,3 @@
+function checkPrime() {
+    return true;
+}
